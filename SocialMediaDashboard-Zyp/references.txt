@@ -1,0 +1,121 @@
+Google Service Account Email: zypartgallery@zyp-art-gallery.iam.gserviceaccount.com
+
+Layout:
+https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/
+https://dash-bootstrap-components.opensource.faculty.ai/docs/components/
+
+Card & Cardbody:
+https://dash-bootstrap-components.opensource.faculty.ai/docs/components/card/
+https://www.youtube.com/watch?v=aEz1-72PKwc
+https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+
+Navbar:
+https://github.com/Coding-with-Adam/Dash-by-Plotly/blob/master/Bootstrap/Side-Bar/side_bar.py
+http://dash-bootstrap-components.opensource.faculty.ai/docs/components/navbar/
+https://community.plotly.com/t/adding-callback-to-dashmenuitem-of-dash-navbar-component/38815
+https://dash-bootstrap-components.opensource.faculty.ai/docs/components/tabs/
+https://dash.plotly.com/dash-core-components/tabs
+https://dash-bootstrap-components.opensource.faculty.ai/docs/components/dropdown_menu/
+
+DataTable:
+https://github.com/Coding-with-Adam/Dash-by-Plotly/blob/master/DataTable/datatable_intro_and_sort.py
+https://dash.plotly.com/datatable
+https://github.com/plotly/dash-table
+https://community.plotly.com/t/how-to-wrap-text-in-cell-in-dash-table/15687/6
+
+Multiple Pages:
+https://dash.plotly.com/urls
+http://dash-bootstrap-components.opensource.faculty.ai/examples/simple-sidebar/
+https://github.com/Coding-with-Adam/Dash-by-Plotly/blob/master/Deploy_App_to_Web/Multipage_App/index.py
+
+Authentication:
+https://levelup.gitconnected.com/how-to-setup-user-authentication-for-dash-apps-using-python-and-flask-6c2e430cdb51
+https://www.youtube.com/watch?v=MxQtgLVEqbQ&list=WL&index=4
+
+Python File Structure:
+https://stackoverflow.com/questions/4383571/importing-files-from-different-folder
+https://www.kite.com/python/answers/how-to-import-a-class-from-another-file-in-python
+
+Date & Time:
+https://www.kite.com/python/answers/how-to-subtract-days-from-a-date-in-python
+https://dash.plotly.com/dash-core-components/datepickerrange
+https://github.com/Coding-with-Adam/Dash-by-Plotly/blob/master/Dash%20Components/DatePickerRange/datepicker.py
+
+Dictionary List:
+https://www.analyticsvidhya.com/blog/2021/06/working-with-lists-dictionaries-in-python/
+https://docs.python.org/3/tutorial/datastructures.html
+
+Hover Data Plotly:
+https://plotly.com/python/hover-text-and-formatting/
+
+Dash Server:
+https://stackoverflow.com/questions/59568510/dash-suppress-callback-exceptions-not-working
+
+Callbacks:
+https://stackoverflow.com/questions/59382089/how-to-use-a-callback-to-add-to-a-string-stored-in-a-div-using-dash-in-python
+https://dash.plotly.com/basic-callbacks
+
+Dashboard Design:
+https://towardsdatascience.com/create-a-professional-dasbhoard-with-dash-and-css-bootstrap-e1829e238fc5
+https://towardsdatascience.com/beginners-guide-to-building-a-multi-page-dashboard-using-dash-5d06dbfc7599
+
+Dropdown:
+https://dash.plotly.com/dash-core-components/dropdown
+https://stackoverflow.com/questions/62859122/dash-callback-with-dropdown
+https://dash.plotly.com/dash-core-components/dropdown
+
+Tooltip:
+http://dash-bootstrap-components.opensource.faculty.ai/docs/components/tooltip/
+
+Collapse:
+http://dash-bootstrap-components.opensource.faculty.ai/docs/components/collapse/
+
+Table:
+http://dash-bootstrap-components.opensource.faculty.ai/docs/components/table/
+
+Plotly elements:
+https://plotly.com/python/figure-labels/
+https://stackoverflow.com/questions/58166002/how-to-add-caption-subtitle-using-plotly-method-in-python
+https://stackoverflow.com/questions/46512682/how-to-set-the-bold-font-style-in-plotly
+
+Choropleth charts:
+https://towardsdatascience.com/geographical-plotting-of-maps-with-plotly-4b5a5c95f02a
+https://plotly.com/python/map-configuration/
+https://plotly.com/python/bubble-maps/
+
+Bar charts:
+https://plotly.com/python/horizontal-bar-charts/
+
+Pandas:
+https://www.codegrepper.com/code-examples/python/replace+empty+string+with+0+pandas
+https://sparkbyexamples.com/pandas/pandas-remove-duplicate-columns-from-dataframe/
+https://stackoverflow.com/questions/32444138/concatenate-a-list-of-pandas-dataframes-together
+https://www.geeksforgeeks.org/python-pandas-timestamp-year/
+https://stackoverflow.com/questions/16923281/writing-a-pandas-dataframe-to-csv-file
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html
+
+Radiobutton:
+https://dash.plotly.com/basic-callbacks
+https://dash.plotly.com/dash-core-components/radioitems
+
+Python:
+https://stackoverflow.com/questions/3476732/how-to-loop-backwards-in-python
+
+Area charts:
+https://chartio.com/learn/charts/area-chart-complete-guide/#:~:text=You%20will%20use%20a%20stacked,their%20contributions%20to%20the%20total.
+https://plotly.com/python/filled-area-plots/
+
+Scatter bubble map charts:
+https://www.nrcan.gc.ca/maps-tools-and-publications/maps/geographical-names-canada/application-programming-interface-api/9249
+https://www.nrcan.gc.ca/earth-sciences/geography/download-geographical-names-data/9245
+https://www.youtube.com/watch?v=7R7VMSLwooo
+https://github.com/Coding-with-Adam/Dash-by-Plotly/blob/master/Dash_Interactive_Graphs/Scatter_mapbox/recycling.py
+https://docs.mapbox.com/help/glossary/access-token/
+https://www.youtube.com/watch?v=1-6ndLqsy6M
+https://github.com/burnash/gspread/issues/1007
+https://stackoverflow.com/questions/37954195/upgrade-version-of-pandas
+https://docs.gspread.org/en/latest/user-guide.html#getting-all-values-from-a-worksheet-as-a-list-of-listshttps://github.com/OCA/partner-contact/issues/826
+https://plotly.github.io/plotly.py-docs/generated/plotly.express.scatter_mapbox.html
+https://www.youtube.com/watch?v=1-6ndLqsy6M
+https://github.com/plotly/dash/issues/914
+https://plotly.github.io/plotly.py-docs/generated/plotly.express.scatter_mapbox.html

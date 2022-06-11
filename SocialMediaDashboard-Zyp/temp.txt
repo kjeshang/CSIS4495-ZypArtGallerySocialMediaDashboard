@@ -1,0 +1,46 @@
+# Table of posts --------------------------------------------------
+# df_postsTable = df[["id","message","date","time"]]; 
+
+# postsTable = dash_table.DataTable(
+#     style_data={
+#         'whiteSpace': 'normal',
+#         'height': 'auto',
+#         'lineHeight': '15px'
+#     },
+#     style_cell={"maxWidth":"500px"},
+#     id='postsTable',
+#     columns=[{"name": i, "id": i} for i in df_postsTable.columns],
+#     data=df_postsTable.to_dict('records')
+# )
+
+# layout = postsTable;
+
+# dbc.CardHeader("Facebook Posts", style={"font-size":"xx-large"}),
+
+id	= 0
+message	= 1
+created_time	
+date	
+time	
+post	
+
+post_engaged_users	post_negative_feedback	post_negative_feedback_unique	post_engaged_fan	post_clicks	post_clicks_unique	post_clicks_by_type - other clicks	post_clicks_by_type - photo view	post_clicks_by_type - link clicks	post_clicks_by_type_unique - other clicks	post_clicks_by_type_unique - photo view	post_clicks_by_type_unique - link clicks	post_activity_by_action_type - share	post_activity_by_action_type - like	post_activity_by_action_type - comment	post_impressions	post_impressions_unique	post_impressions_paid	post_impressions_paid_unique	post_impressions_fan	post_impressions_fan_unique	post_impressions_fan_paid	post_impressions_fan_paid_unique	post_impressions_organic	post_impressions_organic_unique	post_impressions_viral	post_impressions_viral_unique	post_impressions_nonviral	post_impressions_nonviral_unique	post_impressions_by_story_type	post_impressions_by_story_type_unique	post_reactions_like_total	post_reactions_love_total	post_reactions_wow_total	post_reactions_haha_total	post_reactions_sorry_total	post_reactions_anger_total
+
+['end_time', 'page_engaged_users', 'page_post_engagements', 'page_consumptions', 'page_consumptions_unique', 'page_impressions', 'page_impressions_unique', 'page_posts_impressions', 'page_posts_impressions_unique', 'page_fan_adds', 'page_fan_adds_unique', 'page_fan_removes', 'page_fan_removes_unique', 'page_views_total', 'page_views_logged_in_total', 'page_views_logged_in_unique']
+
+# print(len(df1));
+# print(len(df2));
+# print(len(df2));
+# 1486
+# 983
+# 983
+
+The 'scope' property is an enumeration that may be specified as:
+      - One of the following enumeration values:
+            ['africa', 'asia', 'europe', 'north america', 'south america', 'usa', 'world']
+
+https://geogratis.gc.ca/services/geoname/en/geonames.json?&province=48&concise=CITY
+
+https://geogratis.gc.ca/services/geoname/en/codes/concise
+
+https://geogratis.gc.ca/services/geoname/en/geonames?&q=Edson
