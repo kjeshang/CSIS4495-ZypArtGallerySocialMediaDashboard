@@ -13,7 +13,6 @@ def getDataframe(sheet, worksheet):
     dataframe = pd.DataFrame(wks.get_all_records());
     return dataframe;
 
-
 def getDataframe_City(sheet, worksheet):
     global sa
     sh = sa.open(sheet);

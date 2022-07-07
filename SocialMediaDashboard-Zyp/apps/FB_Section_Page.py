@@ -22,17 +22,21 @@ from assets.FB_pageMetrics import pageEngagementDetail_more
 from assets.FB_pageMetrics import pageUserDemographics_more
 
 # Import Dataset --------------------------------------------------
-sheet1 = "ZypFacebook_Insights1";
-worksheet1 = "ZypFacebook_Insights1";
-df1 = getDataframe(sheet1, worksheet1);
+df1 = pd.read_csv("data/ZypFacebook_Insights1.csv", index_col=False);
+df2 = pd.read_csv("data/ZypFacebook_Insights2.csv", index_col=False);
+df3 = pd.read_csv("data/ZypFacebook_Insights3.csv", index_col=False);
 
-sheet2 = "ZypFacebook_Insights2";
-worksheet2 = "ZypFacebook_Insights2";
-df2 = getDataframe(sheet2, worksheet2);
+# sheet1 = "ZypFacebook_Insights1";
+# worksheet1 = "ZypFacebook_Insights1";
+# df1 = getDataframe(sheet1, worksheet1);
 
-sheet3 = "ZypFacebook_Insights3";
-worksheet3 = "ZypFacebook_Insights3";
-df3 = getDataframe(sheet3, worksheet3);
+# sheet2 = "ZypFacebook_Insights2";
+# worksheet2 = "ZypFacebook_Insights2";
+# df2 = getDataframe(sheet2, worksheet2);
+
+# sheet3 = "ZypFacebook_Insights3";
+# worksheet3 = "ZypFacebook_Insights3";
+# df3 = getDataframe(sheet3, worksheet3);
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);

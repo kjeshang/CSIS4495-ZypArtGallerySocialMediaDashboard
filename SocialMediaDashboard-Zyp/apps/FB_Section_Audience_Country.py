@@ -21,28 +21,25 @@ from assets.googleService import getDataframe
 from assets.FB_audienceMetrics import audienceCountryDetail
 
 # Import Dataset --------------------------------------------------
-sheet1 = "ZypFacebook_Audience-Country1";
-worksheet1 = "ZypFacebook_Audience-Country1";
-df1 = getDataframe(sheet1, worksheet1);
+df1 = pd.read_csv("data/ZypFacebook_Audience-Country1.csv", index_col=False);
+df2 = pd.read_csv("data/ZypFacebook_Audience-Country2.csv", index_col=False);
+df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
 
-sheet2 = "ZypFacebook_Audience-Country2";
-worksheet2 = "ZypFacebook_Audience-Country2";
-df2 = getDataframe(sheet2, worksheet2);
+# sheet1 = "ZypFacebook_Audience-Country1";
+# worksheet1 = "ZypFacebook_Audience-Country1";
+# df1 = getDataframe(sheet1, worksheet1);
 
-df_iso_alpha = pd.read_csv("assets\CountryCode-iso_alpha.csv", index_col=False);
-df_iso_alpha2 = pd.read_csv("assets\CountryCode-iso_alpha2.csv", index_col=False);
+# sheet2 = "ZypFacebook_Audience-Country2";
+# worksheet2 = "ZypFacebook_Audience-Country2";
+# df2 = getDataframe(sheet2, worksheet2);
+
+# sheet_iso_alpha = "CountryCode-iso_alpha_Final";
+# worksheet_iso_alpha = "CountryCode-iso_alpha_Final";
+# df_iso_alpha_Final = getDataframe(sheet_iso_alpha, worksheet_iso_alpha);
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);
-
 df2["end_time"] = pd.to_datetime(df2["end_time"]);
-
-df_iso_alpha = df_iso_alpha[["COUNTRY","CODE"]]
-df_iso_alpha = df_iso_alpha.rename(columns={"COUNTRY":"Country","CODE":"Code"});
-df_iso_alpha2 = df_iso_alpha2[["name","alpha-3"]];
-df_iso_alpha2 = df_iso_alpha2.rename(columns={"name":"Country","alpha-3":"Code"});
-df_iso_alpha_Final = pd.concat([df_iso_alpha, df_iso_alpha2], ignore_index=True);
-df_iso_alpha_Final = df_iso_alpha_Final.drop_duplicates();
 
 # Create elements of the webpage ----------------------------------
 
@@ -59,6 +56,17 @@ countryDateRangeFilter = [
         start_date=df1["end_time"][0] - timedelta(30),
         end_date=df1["end_time"][0],
         updatemode="bothdates"
+    )
+];
+
+# Region scope radio button selector:
+regionScopeRadioButtonSelector = [
+    html.P("Region Scope", style={"font-weight":"bold"}),
+    dcc.RadioItems(
+        id="FB_country_region_scope",
+        options=[{"label":x, "value":x} for x in df_iso_alpha_Final["Region"].unique().tolist()],
+        value="World",
+        inputStyle={"margin-right":"5px", "margin-left":"15px"}
     )
 ];
 
@@ -113,7 +121,12 @@ countryStructure = [
                     dbc.Card(children=[
                         dbc.CardBody(children=countryDateRangeFilter)
                     ])
-                ], width=4)
+                ], width=5),
+                dbc.Col(children=[
+                    dbc.Card(children=[
+                        dbc.CardBody(children=regionScopeRadioButtonSelector)
+                    ])
+                ], width=7)
             ]),
             html.Br(),
             dbc.Row(children=[
@@ -192,10 +205,11 @@ def set_dataframeForCountryCharts1(dataframe, mask):
         for j in df_iso_alpha_Final.index:
             if df_iso_alpha_Final.loc[j, "Country"] == countries1[i]:
                 row.append(df_iso_alpha_Final.loc[j, "Code"]);
+                row.append(df_iso_alpha_Final.loc[j, "Region"]);
         row.append(df[mask].transpose()[1:][index][i]);
         data.append(row);
 
-    dff = pd.DataFrame(data, columns=["Country","iso_alpha","Count"]); 
+    dff = pd.DataFrame(data, columns=["Country","iso_alpha","Region","Count"]); 
     return dff;
 
 # Callback for lifetime likes top ten countries bar chart:
@@ -203,14 +217,18 @@ def set_dataframeForCountryCharts1(dataframe, mask):
     Output("FB_country_chart_1", "figure"),
     [
         Input("FB_country_date-range", "end_date"),
+        Input("FB_country_region_scope", "value")
     ],  
 )
-def get_countryBarChart1(end_date):
+def get_countryBarChart1(end_date, region_scope):
     mask = df1["end_time"] == end_date;
     df = set_dataframeForCountryCharts1(df1, mask);
     
     df = df.sort_values(["Count","Country"], ascending=False);
-    filter = (df["Count"] != '') & (df["Count"].notna()) & (df["Count"].notnull());
+    if region_scope == "World":
+        filter = (df["Count"] != '') & (df["Count"].notna()) & (df["Count"].notnull());
+    else:
+        filter = (df["Count"] != '') & (df["Count"].notna()) & (df["Count"].notnull()) & (df["Region"] == region_scope);
     dff = df[filter][0:10].copy();
     dff = dff.sort_values("Count", ascending=True);
     
@@ -224,12 +242,13 @@ def get_countryBarChart1(end_date):
     Output("FB_country_choropleth_1", "figure"),
     [
         Input("FB_country_date-range", "end_date"),
+        Input("FB_country_region_scope", "value")
     ],  
 )
-def get_countryChoropleth1(end_date):
+def get_countryChoropleth1(end_date, region_scope):
     mask = df1["end_time"] == end_date;
     dff = set_dataframeForCountryCharts1(df1, mask);
-    
+
     fig = go.Figure(data=go.Choropleth(
         locations = dff['iso_alpha'],
         z = dff['Count'],
@@ -243,6 +262,7 @@ def get_countryChoropleth1(end_date):
         title_text = title,
         geo = dict(
             projection = {'type':'natural earth'},
+            scope = region_scope.lower()
         )
     );
     return fig;
@@ -299,9 +319,10 @@ def set_dataframeForCountryCharts2(dataframe, mask):
         for j in df_iso_alpha_Final.index:
             if df_iso_alpha_Final.loc[j, "Country"] == countries[i]:
                 row.append(df_iso_alpha_Final.loc[j, "Code"]);
+                row.append(df_iso_alpha_Final.loc[j, "Region"]);
         row.append(dfTemp.transpose()[index][i]);
         data.append(row);
-    dff = pd.DataFrame(data, columns=["Country","iso_alpha","Count"]);
+    dff = pd.DataFrame(data, columns=["Country","iso_alpha","Region", "Count"]);
 
     return dff;
 
@@ -311,16 +332,21 @@ def set_dataframeForCountryCharts2(dataframe, mask):
     [
         Input("FB_country_date-range", "start_date"),
         Input("FB_country_date-range", "end_date"),
+        Input("FB_country_region_scope", "value")
     ],  
 )
-def get_countryBarChart2(start_date, end_date):
+def get_countryBarChart2(start_date, end_date, region_scope):
     mask = (df2["end_time"] >= start_date) & (df2["end_time"] <= end_date);
     df = set_dataframeForCountryCharts2(df2, mask);
     
     df = df.sort_values(["Count","Country"], ascending=False);
     # filter = (df["Count"] != '') & (df["Count"].notna()) & (df["Count"].notnull());
     # dff = df[filter][0:10].copy();
-    dff = df[0:10].copy();
+    if region_scope == "World":
+        dff = df[0:10].copy();
+    else:
+        filter = df["Region"] == region_scope;
+        dff = df[filter][0:10].copy();
     dff = dff.sort_values("Count", ascending=True);
     
     title = "Average Daily Reach of Top 10 Countries <br><sup>(From " + str(start_date[0:10]) + " to " + str(end_date[0:10]) + ")</sup>";
@@ -334,9 +360,10 @@ def get_countryBarChart2(start_date, end_date):
     [
         Input("FB_country_date-range", "start_date"),
         Input("FB_country_date-range", "end_date"),
+        Input("FB_country_region_scope", "value")
     ],  
 )
-def get_countryChoropleth2(start_date, end_date):
+def get_countryChoropleth2(start_date, end_date, region_scope):
     mask = (df2["end_time"] >= start_date) & (df2["end_time"] <= end_date);
     dff = set_dataframeForCountryCharts2(df2, mask);
     
@@ -353,6 +380,7 @@ def get_countryChoropleth2(start_date, end_date):
         title_text = title,
         geo = dict(
             projection = {'type':'natural earth'},
+            scope = region_scope.lower()
         )
     );
 

@@ -21,9 +21,11 @@ from assets.googleService import getDataframe
 from assets.FB_audienceMetrics import audienceTimeOfDayDetail
 
 # Import Dataset --------------------------------------------------
-sheet = "ZypFacebook_Audience-TimeOfDay";
-worksheet = "ZypFacebook_Audience-TimeOfDay";
-df = getDataframe(sheet, worksheet);
+df = pd.read_csv("data/ZypFacebook_Audience-TimeOfDay.csv", index_col=False);
+
+# sheet = "ZypFacebook_Audience-TimeOfDay";
+# worksheet = "ZypFacebook_Audience-TimeOfDay";
+# df = getDataframe(sheet, worksheet);
 
 # Prepare Data --------------------------------------------
 df["end_time"] = pd.to_datetime(df["end_time"]);
@@ -36,7 +38,6 @@ for i in df.index:
 years = list(dict.fromkeys(years));
 
 # Create elements of the webpage ----------------------------------
-
 timeOfDaySectionHeading = [html.H1("Facebook Audience Insights - Time of Day", style={"font-weight":"bold"})];
 
 # Date range filter:

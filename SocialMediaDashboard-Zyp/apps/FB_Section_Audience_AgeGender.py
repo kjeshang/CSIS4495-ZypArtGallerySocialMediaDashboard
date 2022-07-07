@@ -20,13 +20,16 @@ from assets.googleService import getDataframe
 from assets.FB_audienceMetrics import audienceAgeGenderDetail
 
 # Import Dataset --------------------------------------------------
-sheet1 = "ZypFacebook_Audience-Age&Gender1";
-worksheet1 = "ZypFacebook_Audience-Age&Gender1";
-df1 = getDataframe(sheet1, worksheet1);
+df1 = pd.read_csv("data/ZypFacebook_Audience-Age&Gender1.csv", index_col=False);
+df2 = pd.read_csv("data/ZypFacebook_Audience-Age&Gender2.csv", index_col=False);
 
-sheet2 = "ZypFacebook_Audience-Age&Gender2";
-worksheet2 = "ZypFacebook_Audience-Age&Gender2";
-df2 = getDataframe(sheet2, worksheet2);
+# sheet1 = "ZypFacebook_Audience-Age&Gender1";
+# worksheet1 = "ZypFacebook_Audience-Age&Gender1";
+# df1 = getDataframe(sheet1, worksheet1);
+
+# sheet2 = "ZypFacebook_Audience-Age&Gender2";
+# worksheet2 = "ZypFacebook_Audience-Age&Gender2";
+# df2 = getDataframe(sheet2, worksheet2);
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);
@@ -60,7 +63,7 @@ ageGenderDateRangeFilter = [
 ];
 
 # Gender type dropdown filter:
-genderDropdownFilter = [
+genderChecklistFilter = [
     html.P("Gender Identity", style={"font-weight":"bold"}),
     dcc.Checklist(
         id="FB_gender_id",
@@ -135,7 +138,7 @@ ageGenderStructure = [
                 ], width=4),
                 dbc.Col(children=[
                     dbc.Card(children=[
-                        dbc.CardBody(children=genderDropdownFilter)
+                        dbc.CardBody(children=genderChecklistFilter)
                     ])
                 ], width=3),
                 dbc.Col(children=[

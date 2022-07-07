@@ -21,10 +21,11 @@ from assets.googleService import getDataframe
 from assets.FB_postMetrics import postEngagmentDetail, postImpressionDetail, postReactionDetail
 
 # Import Dataset --------------------------------------------------
-sheet = "ZypFacebook_Posts";
-worksheet = "ZypFacebook_Posts";
+df = pd.read_csv("data/ZypFacebook_Posts.csv", index_col=False);
 
-df = getDataframe(sheet, worksheet);
+# sheet = "ZypFacebook_Posts";
+# worksheet = "ZypFacebook_Posts";
+# df = getDataframe(sheet, worksheet);
 
 # Prepare Data --------------------------------------------
 post_ids = df["id"];
