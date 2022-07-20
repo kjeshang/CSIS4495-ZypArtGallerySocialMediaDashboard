@@ -17,21 +17,21 @@ from dash import dash_table
 import sys
 
 sys.path.append(".")
-from assets.googleService import getDataframe
+from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_audienceMetrics import audienceCountryDetail
 
 # Import Dataset --------------------------------------------------
-df1 = pd.read_csv("data/ZypFacebook_Audience-Country1.csv", index_col=False);
-df2 = pd.read_csv("data/ZypFacebook_Audience-Country2.csv", index_col=False);
+# df1 = pd.read_csv("data/ZypFacebook_Audience-Country1.csv", index_col=False);
+# df2 = pd.read_csv("data/ZypFacebook_Audience-Country2.csv", index_col=False);
 df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
 
-# sheet1 = "ZypFacebook_Audience-Country1";
-# worksheet1 = "ZypFacebook_Audience-Country1";
-# df1 = getDataframe(sheet1, worksheet1);
+sheet1 = "ZypFacebook_Audience-Country1";
+worksheet1 = "ZypFacebook_Audience-Country1";
+df1 = getDataframe(sheet1, worksheet1);
 
-# sheet2 = "ZypFacebook_Audience-Country2";
-# worksheet2 = "ZypFacebook_Audience-Country2";
-# df2 = getDataframe(sheet2, worksheet2);
+sheet2 = "ZypFacebook_Audience-Country2";
+worksheet2 = "ZypFacebook_Audience-Country2";
+df2 = getDataframe(sheet2, worksheet2);
 
 # sheet_iso_alpha = "CountryCode-iso_alpha_Final";
 # worksheet_iso_alpha = "CountryCode-iso_alpha_Final";

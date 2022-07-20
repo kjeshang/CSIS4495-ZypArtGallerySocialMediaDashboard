@@ -18,23 +18,23 @@ from dash import dash_table
 import sys
 
 sys.path.append(".")
-from assets.googleService import getDataframe, getDataframe_City
+from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_audienceMetrics import audienceCanadianCityDetail, provinceDetail, conciseDetail
 
 # Import Dataset --------------------------------------------------
-df1 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
-df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
+# df1 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
+# df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
 geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
 
-# sheet1 = "ZypFacebook_Audience-CanadianCity1";
-# worksheet1 = "ZypFacebook_Audience-CanadianCity1";
-# listOfLists1 = getDataframe_City(sheet1, worksheet1);
-# df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+sheet1 = "ZypFacebook_Audience-CanadianCity1";
+worksheet1 = "ZypFacebook_Audience-CanadianCity1";
+listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
+df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
 
-# sheet2 = "ZypFacebook_Audience-CanadianCity2";
-# worksheet2 = "ZypFacebook_Audience-CanadianCity2";
-# listOfLists2 = getDataframe_City(sheet2, worksheet2);
-# df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
+sheet2 = "ZypFacebook_Audience-CanadianCity2";
+worksheet2 = "ZypFacebook_Audience-CanadianCity2";
+listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
+df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
 
 # geoSheet = "GeoNamesData";
 # geoWorksheet = "GeoNamesData";

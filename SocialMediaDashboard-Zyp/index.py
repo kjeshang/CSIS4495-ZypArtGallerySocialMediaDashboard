@@ -18,6 +18,7 @@ from dash import callback
 from dash.dependencies import Input, Output, State
 # from dash_extensions import Lottie
 from dash import dash_table
+import dash_auth
 
 import sys
 
@@ -35,10 +36,31 @@ from apps import IG_Section_Audience_AgeGender
 from apps import IG_Section_Audience_Country
 from apps import IG_Section_Audience_CanadianCity
 from apps import IG_Section_Audience_TimeOfDay
+from assets.googleService import getDataframe_listOfLists, getDataframe
+from app import server
 
 # Instantiate dashboard application --------------------------------------
 app = Dash(__name__, external_stylesheets=[dbc.themes.LUX]);
 # app = Dash(__name__, external_stylesheets=[dbc.themes.LUX], suppress_callback_exceptions=True);
+
+# Setup dashboard application basic authentication -----------------------------
+sheet = "DashAppLogins";
+worksheet = "DashAppLogins";
+# df = getDataframe(sheet, worksheet);
+listOfLists = getDataframe_listOfLists(sheet, worksheet);
+df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+
+authDict = {};
+for i in df.index:
+    authDict[df.loc[i, "Username"]] = str(df.loc[i, "Password"]);
+
+# server = app.server
+auth = dash_auth.BasicAuth(
+    app,
+    # {'bugsbunny': 'topsecret',
+    #  'pajaroloco': 'unsecreto'}
+    authDict
+)
 
 # Create constant elements of webpages -----------------------------------
 

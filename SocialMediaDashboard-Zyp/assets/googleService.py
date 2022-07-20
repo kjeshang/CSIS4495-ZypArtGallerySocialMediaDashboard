@@ -13,7 +13,7 @@ def getDataframe(sheet, worksheet):
     dataframe = pd.DataFrame(wks.get_all_records());
     return dataframe;
 
-def getDataframe_City(sheet, worksheet):
+def getDataframe_listOfLists(sheet, worksheet):
     global sa
     sh = sa.open(sheet);
     wks = sh.worksheet(worksheet);

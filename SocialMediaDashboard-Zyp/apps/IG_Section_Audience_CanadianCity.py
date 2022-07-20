@@ -18,17 +18,17 @@ from dash import dash_table
 import sys
 
 sys.path.append(".")
-from assets.googleService import getDataframe_City, getDataframe
+from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_audienceMetrics import audienceCanadianCityDetail, provinceDetail, conciseDetail
 
 # Import Dataset --------------------------------------------------
-df = pd.read_csv("data/ZypInstagram_Audience-CanadianCity.csv", index_col=False);
+# df = pd.read_csv("data/ZypInstagram_Audience-CanadianCity.csv", index_col=False);
 geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
 
-# sheet = "ZypInstagram_Audience-CanadianCity";
-# worksheet = "ZypInstagram_Audience-CanadianCity";
-# listOfLists = getDataframe_City(sheet, worksheet);
-# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+sheet = "ZypInstagram_Audience-CanadianCity";
+worksheet = "ZypInstagram_Audience-CanadianCity";
+listOfLists = getDataframe_listOfLists(sheet, worksheet);
+df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # geoSheet = "GeoNamesData";
 # geoWorksheet = "GeoNamesData";
