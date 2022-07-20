@@ -24,6 +24,7 @@ import sys
 
 sys.path.append(".")
 from app import app
+from apps import home
 from apps import FB_Section_Posts
 from apps import FB_Section_Page
 from apps import FB_Section_Audience_AgeGender
@@ -120,6 +121,9 @@ app.layout = html.Div([
     [Input('url', 'pathname')]
 )
 def display_page(pathname):
+    # Home
+    if pathname == "/":
+        return home.homePageLayout;
     # Facebook
     if pathname == '/FB_Section_Posts':
         return FB_Section_Posts.postSectionlayout;
@@ -146,6 +150,7 @@ def display_page(pathname):
         return IG_Section_Audience_CanadianCity.canadianCityLayout;
     if pathname == "/IG_Section_Audience_TimeOfDay":
         return IG_Section_Audience_TimeOfDay.timeOfDayLayout;
+    # Page Error
     else:
         return "404 Page Error! Please choose a link";
 

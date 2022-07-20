@@ -28,15 +28,15 @@ from assets.FB_pageMetrics import pageUserDemographics_more
 
 sheet1 = "ZypFacebook_Insights1";
 worksheet1 = "ZypFacebook_Insights1";
-# df1 = getDataframe(sheet1, worksheet1);
-listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
-df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+df1 = getDataframe(sheet1, worksheet1);
+# listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
+# df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
 
 sheet2 = "ZypFacebook_Insights2";
 worksheet2 = "ZypFacebook_Insights2";
-# df2 = getDataframe(sheet2, worksheet2);
-listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
-df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
+df2 = getDataframe(sheet2, worksheet2);
+# listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
+# df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
 
 sheet3 = "ZypFacebook_Insights3";
 worksheet3 = "ZypFacebook_Insights3";

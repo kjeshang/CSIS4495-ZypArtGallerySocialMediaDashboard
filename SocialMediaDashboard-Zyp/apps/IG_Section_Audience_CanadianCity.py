@@ -23,7 +23,8 @@ from assets.IG_audienceMetrics import audienceCanadianCityDetail, provinceDetail
 
 # Import Dataset --------------------------------------------------
 # df = pd.read_csv("data/ZypInstagram_Audience-CanadianCity.csv", index_col=False);
-geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
+# geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
+geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
 
 sheet = "ZypInstagram_Audience-CanadianCity";
 worksheet = "ZypInstagram_Audience-CanadianCity";

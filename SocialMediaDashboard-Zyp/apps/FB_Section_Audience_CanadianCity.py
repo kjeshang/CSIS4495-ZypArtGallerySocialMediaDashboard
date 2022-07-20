@@ -24,7 +24,8 @@ from assets.FB_audienceMetrics import audienceCanadianCityDetail, provinceDetail
 # Import Dataset --------------------------------------------------
 # df1 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
 # df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
-geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
+# geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
+geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
 
 sheet1 = "ZypFacebook_Audience-CanadianCity1";
 worksheet1 = "ZypFacebook_Audience-CanadianCity1";

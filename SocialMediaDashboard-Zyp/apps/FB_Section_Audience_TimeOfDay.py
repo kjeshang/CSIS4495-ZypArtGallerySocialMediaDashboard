@@ -25,9 +25,9 @@ from assets.FB_audienceMetrics import audienceTimeOfDayDetail
 
 sheet = "ZypFacebook_Audience-TimeOfDay";
 worksheet = "ZypFacebook_Audience-TimeOfDay";
-# df = getDataframe(sheet, worksheet);
-listOfLists = getDataframe_listOfLists(sheet, worksheet);
-df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+df = getDataframe(sheet, worksheet);
+# listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # Prepare Data --------------------------------------------
 df["end_time"] = pd.to_datetime(df["end_time"]);
