@@ -15,9 +15,9 @@ import dash_bootstrap_components as dbc
 # from dash_extensions import Lottie
 from dash import dash_table
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_pageMetrics import pageDetail, pageDetailMore
 

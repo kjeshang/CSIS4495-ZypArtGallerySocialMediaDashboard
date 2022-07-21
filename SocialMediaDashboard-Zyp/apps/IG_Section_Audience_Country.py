@@ -15,21 +15,23 @@ import dash_bootstrap_components as dbc
 # from dash_extensions import Lottie
 from dash import dash_table
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_audienceMetrics import audienceCountryDetail
 
 # Import Dataset --------------------------------------------------
 # df = pd.read_csv("data/ZypInstagram_Audience-Country.csv", index_col=False);
-df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
+# df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
+url="https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/CountryCode-iso_alpha_Final.csv";
+df_iso_alpha_Final = pd.read_csv(url, index_col=False);
 
 sheet = "ZypInstagram_Audience-Country";
 worksheet = "ZypInstagram_Audience-Country";
-# df = getDataframe(sheet, worksheet);
-listOfLists = getDataframe_listOfLists(sheet, worksheet);
-df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+df = getDataframe(sheet, worksheet);
+# listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # sheet_iso_alpha = "CountryCode-iso_alpha_Final";
 # worksheet_iso_alpha = "CountryCode-iso_alpha_Final";

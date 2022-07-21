@@ -20,10 +20,11 @@ from dash.dependencies import Input, Output, State
 from dash import dash_table
 import dash_auth
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 from app import app
+from app import server
 from apps import home
 from apps import FB_Section_Posts
 from apps import FB_Section_Page
@@ -38,10 +39,9 @@ from apps import IG_Section_Audience_Country
 from apps import IG_Section_Audience_CanadianCity
 from apps import IG_Section_Audience_TimeOfDay
 from assets.googleService import getDataframe_listOfLists, getDataframe
-from app import server
 
 # Instantiate dashboard application --------------------------------------
-app = Dash(__name__, external_stylesheets=[dbc.themes.LUX]);
+# app = Dash(__name__, external_stylesheets=[dbc.themes.LUX]);
 # app = Dash(__name__, external_stylesheets=[dbc.themes.LUX], suppress_callback_exceptions=True);
 
 # Setup dashboard application basic authentication -----------------------------
@@ -55,7 +55,6 @@ authDict = {};
 for i in df.index:
     authDict[df.loc[i, "Username"]] = str(df.loc[i, "Password"]);
 
-# server = app.server
 auth = dash_auth.BasicAuth(
     app,
     # {'bugsbunny': 'topsecret',
@@ -158,3 +157,5 @@ def display_page(pathname):
 # app.run_server(debug=True, use_reloader=False)
 if __name__ == '__main__':
     app.run_server(debug=True, use_reloader=False)
+# if __name__ == '__main__':
+#     app.run_server(debug=False)

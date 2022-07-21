@@ -1,7 +1,7 @@
 import gspread
 import pandas as pd
 
-sa = gspread.service_account(filename="Assets\zyp-art-gallery-62e00b2be4ff.json");
+sa = gspread.service_account(filename="Assets/zyp-art-gallery-62e00b2be4ff.json");
 
 # sheet = "Test";
 # worksheet = "Test";

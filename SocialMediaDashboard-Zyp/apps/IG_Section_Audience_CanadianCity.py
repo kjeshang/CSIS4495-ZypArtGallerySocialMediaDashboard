@@ -15,16 +15,18 @@ import dash_bootstrap_components as dbc
 # from dash_extensions import Lottie
 from dash import dash_table
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_audienceMetrics import audienceCanadianCityDetail, provinceDetail, conciseDetail
 
 # Import Dataset --------------------------------------------------
 # df = pd.read_csv("data/ZypInstagram_Audience-CanadianCity.csv", index_col=False);
 # geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
-geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
+# geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
+url = "https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/GeoNamesData.csv";
+geo_df = pd.read_csv(url, index_col=False);
 
 sheet = "ZypInstagram_Audience-CanadianCity";
 worksheet = "ZypInstagram_Audience-CanadianCity";

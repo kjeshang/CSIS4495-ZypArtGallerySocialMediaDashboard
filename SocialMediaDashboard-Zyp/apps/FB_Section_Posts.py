@@ -14,9 +14,9 @@ import dash_bootstrap_components as dbc
 # from dash_extensions import Lottie
 from dash import dash_table
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_postMetrics import postEngagmentDetail, postImpressionDetail, postReactionDetail
 
@@ -25,9 +25,9 @@ from assets.FB_postMetrics import postEngagmentDetail, postImpressionDetail, pos
 
 sheet = "ZypFacebook_Posts";
 worksheet = "ZypFacebook_Posts";
-# df = getDataframe(sheet, worksheet);
-listOfLists = getDataframe_listOfLists(sheet, worksheet);
-df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+df = getDataframe(sheet, worksheet);
+# listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # Prepare Data --------------------------------------------
 post_ids = df["id"];

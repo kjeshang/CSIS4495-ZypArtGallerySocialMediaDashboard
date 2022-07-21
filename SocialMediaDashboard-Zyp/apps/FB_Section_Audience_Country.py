@@ -14,16 +14,18 @@ import dash_bootstrap_components as dbc
 # from dash_extensions import Lottie
 from dash import dash_table
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_audienceMetrics import audienceCountryDetail
 
 # Import Dataset --------------------------------------------------
 # df1 = pd.read_csv("data/ZypFacebook_Audience-Country1.csv", index_col=False);
 # df2 = pd.read_csv("data/ZypFacebook_Audience-Country2.csv", index_col=False);
-df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
+# df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
+url="https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/CountryCode-iso_alpha_Final.csv";
+df_iso_alpha_Final = pd.read_csv(url, index_col=False);
 
 sheet1 = "ZypFacebook_Audience-Country1";
 worksheet1 = "ZypFacebook_Audience-Country1";
