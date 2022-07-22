@@ -5,9 +5,7 @@ from datetime import date, datetime, timedelta
 import calendar
 # from dateutil import parser
 import gspread
-import urllib.request, json 
-import base64
-from PIL import Image
+import urllib.request, json
 
 import plotly.express as px
 import plotly.graph_objects as go

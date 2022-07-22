@@ -21,13 +21,16 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_postMetrics import postEngagmentDetail, postImpressionDetail, postReactionDetail
 
 # Import Dataset --------------------------------------------------
-# df = pd.read_csv("data/ZypFacebook_Posts.csv", index_col=False);
 
-sheet = "ZypFacebook_Posts";
-worksheet = "ZypFacebook_Posts";
-df = getDataframe(sheet, worksheet);
-# listOfLists = getDataframe_listOfLists(sheet, worksheet);
-# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+# Local Data ******************************************************
+df = pd.read_csv("data/ZypFacebook_Posts.csv", index_col=False);
+
+# Online Data ******************************************************
+# sheet = "ZypFacebook_Posts";
+# worksheet = "ZypFacebook_Posts";
+# df = getDataframe(sheet, worksheet);
+# # listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# # df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # Prepare Data --------------------------------------------
 post_ids = df["id"];

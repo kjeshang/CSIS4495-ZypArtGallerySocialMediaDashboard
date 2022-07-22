@@ -21,23 +21,26 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_audienceMetrics import audienceCountryDetail
 
 # Import Dataset --------------------------------------------------
-# df1 = pd.read_csv("data/ZypFacebook_Audience-Country1.csv", index_col=False);
-# df2 = pd.read_csv("data/ZypFacebook_Audience-Country2.csv", index_col=False);
-# df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
-url="https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/CountryCode-iso_alpha_Final.csv";
-df_iso_alpha_Final = pd.read_csv(url, index_col=False);
 
-sheet1 = "ZypFacebook_Audience-Country1";
-worksheet1 = "ZypFacebook_Audience-Country1";
-df1 = getDataframe(sheet1, worksheet1);
+# Local Data ******************************************************
+df1 = pd.read_csv("data/ZypFacebook_Audience-Country1.csv", index_col=False);
+df2 = pd.read_csv("data/ZypFacebook_Audience-Country2.csv", index_col=False);
+df_iso_alpha_Final = pd.read_csv("assets/CountryCode-iso_alpha_Final.csv", index_col=False);
 
-sheet2 = "ZypFacebook_Audience-Country2";
-worksheet2 = "ZypFacebook_Audience-Country2";
-df2 = getDataframe(sheet2, worksheet2);
+# Online Data ******************************************************
+# sheet1 = "ZypFacebook_Audience-Country1";
+# worksheet1 = "ZypFacebook_Audience-Country1";
+# df1 = getDataframe(sheet1, worksheet1);
+
+# sheet2 = "ZypFacebook_Audience-Country2";
+# worksheet2 = "ZypFacebook_Audience-Country2";
+# df2 = getDataframe(sheet2, worksheet2);
 
 # sheet_iso_alpha = "CountryCode-iso_alpha_Final";
 # worksheet_iso_alpha = "CountryCode-iso_alpha_Final";
 # df_iso_alpha_Final = getDataframe(sheet_iso_alpha, worksheet_iso_alpha);
+# url="https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/CountryCode-iso_alpha_Final.csv";
+# df_iso_alpha_Final = pd.read_csv(url, index_col=False);
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);

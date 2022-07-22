@@ -21,27 +21,29 @@ from dash import dash_table
 from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.FB_audienceMetrics import audienceCanadianCityDetail, provinceDetail, conciseDetail
 
-# Import Dataset --------------------------------------------------
-# df1 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
-# df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
-# geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
-# geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
-url = "https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/GeoNamesData.csv";
-geo_df = pd.read_csv(url, index_col=False);
+# Import Dataset -------------------------------------------------
 
-sheet1 = "ZypFacebook_Audience-CanadianCity1";
-worksheet1 = "ZypFacebook_Audience-CanadianCity1";
-listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
-df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+# Local Data ******************************************************
+df1 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
+df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
+geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
 
-sheet2 = "ZypFacebook_Audience-CanadianCity2";
-worksheet2 = "ZypFacebook_Audience-CanadianCity2";
-listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
-df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
+# Online Data ******************************************************
+# sheet1 = "ZypFacebook_Audience-CanadianCity1";
+# worksheet1 = "ZypFacebook_Audience-CanadianCity1";
+# listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
+# df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+
+# sheet2 = "ZypFacebook_Audience-CanadianCity2";
+# worksheet2 = "ZypFacebook_Audience-CanadianCity2";
+# listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
+# df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
 
 # geoSheet = "GeoNamesData";
 # geoWorksheet = "GeoNamesData";
 # geo_df = getDataframe(geoSheet, geoWorksheet);
+# url = "https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/GeoNamesData.csv";
+# geo_df = pd.read_csv(url, index_col=False);
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);

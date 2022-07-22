@@ -44,23 +44,23 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 # app = Dash(__name__, external_stylesheets=[dbc.themes.LUX]);
 # app = Dash(__name__, external_stylesheets=[dbc.themes.LUX], suppress_callback_exceptions=True);
 
-# Setup dashboard application basic authentication -----------------------------
-sheet = "DashAppLogins";
-worksheet = "DashAppLogins";
-# df = getDataframe(sheet, worksheet);
-listOfLists = getDataframe_listOfLists(sheet, worksheet);
-df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+# # Setup dashboard application basic authentication -----------------------------
+# sheet = "DashAppLogins";
+# worksheet = "DashAppLogins";
+# # df = getDataframe(sheet, worksheet);
+# listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
-authDict = {};
-for i in df.index:
-    authDict[df.loc[i, "Username"]] = str(df.loc[i, "Password"]);
+# authDict = {};
+# for i in df.index:
+#     authDict[df.loc[i, "Username"]] = str(df.loc[i, "Password"]);
 
-auth = dash_auth.BasicAuth(
-    app,
-    # {'bugsbunny': 'topsecret',
-    #  'pajaroloco': 'unsecreto'}
-    authDict
-)
+# auth = dash_auth.BasicAuth(
+#     app,
+#     # {'bugsbunny': 'topsecret',
+#     #  'pajaroloco': 'unsecreto'}
+#     authDict
+# )
 
 # Create constant elements of webpages -----------------------------------
 

@@ -22,27 +22,30 @@ from assets.FB_pageMetrics import pageEngagementDetail_more
 from assets.FB_pageMetrics import pageUserDemographics_more
 
 # Import Dataset --------------------------------------------------
-# df1 = pd.read_csv("data/ZypFacebook_Insights1.csv", index_col=False);
-# df2 = pd.read_csv("data/ZypFacebook_Insights2.csv", index_col=False);
-# df3 = pd.read_csv("data/ZypFacebook_Insights3.csv", index_col=False);
 
-sheet1 = "ZypFacebook_Insights1";
-worksheet1 = "ZypFacebook_Insights1";
-df1 = getDataframe(sheet1, worksheet1);
-# listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
-# df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+# Local Data ******************************************************
+df1 = pd.read_csv("data/ZypFacebook_Insights1.csv", index_col=False);
+df2 = pd.read_csv("data/ZypFacebook_Insights2.csv", index_col=False);
+df3 = pd.read_csv("data/ZypFacebook_Insights3.csv", index_col=False);
 
-sheet2 = "ZypFacebook_Insights2";
-worksheet2 = "ZypFacebook_Insights2";
-df2 = getDataframe(sheet2, worksheet2);
-# listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
-# df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
+# Online Data ******************************************************
+# sheet1 = "ZypFacebook_Insights1";
+# worksheet1 = "ZypFacebook_Insights1";
+# df1 = getDataframe(sheet1, worksheet1);
+# # listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
+# # df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
 
-sheet3 = "ZypFacebook_Insights3";
-worksheet3 = "ZypFacebook_Insights3";
-# df3 = getDataframe(sheet3, worksheet3);
-listOfLists3 = getDataframe_listOfLists(sheet3, worksheet3);
-df3 = pd.DataFrame(listOfLists3[1:], columns=listOfLists3[0])
+# sheet2 = "ZypFacebook_Insights2";
+# worksheet2 = "ZypFacebook_Insights2";
+# df2 = getDataframe(sheet2, worksheet2);
+# # listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
+# # df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
+
+# sheet3 = "ZypFacebook_Insights3";
+# worksheet3 = "ZypFacebook_Insights3";
+# # df3 = getDataframe(sheet3, worksheet3);
+# listOfLists3 = getDataframe_listOfLists(sheet3, worksheet3);
+# df3 = pd.DataFrame(listOfLists3[1:], columns=listOfLists3[0])
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);

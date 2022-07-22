@@ -22,20 +22,22 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_audienceMetrics import audienceCanadianCityDetail, provinceDetail, conciseDetail
 
 # Import Dataset --------------------------------------------------
-# df = pd.read_csv("data/ZypInstagram_Audience-CanadianCity.csv", index_col=False);
-# geo_df = pd.read_excel("assets/GeoNamesData.xlsx", index_col=False)
-# geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
-url = "https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/GeoNamesData.csv";
-geo_df = pd.read_csv(url, index_col=False);
 
-sheet = "ZypInstagram_Audience-CanadianCity";
-worksheet = "ZypInstagram_Audience-CanadianCity";
-listOfLists = getDataframe_listOfLists(sheet, worksheet);
-df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+# Local Data ******************************************************
+df = pd.read_csv("data/ZypInstagram_Audience-CanadianCity.csv", index_col=False);
+geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
+
+# Online Data ******************************************************
+# sheet = "ZypInstagram_Audience-CanadianCity";
+# worksheet = "ZypInstagram_Audience-CanadianCity";
+# listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # geoSheet = "GeoNamesData";
 # geoWorksheet = "GeoNamesData";
 # geo_df = getDataframe(geoSheet, geoWorksheet);
+# url = "https://raw.githubusercontent.com/kjeshang/ZypArtGallerySocialMediaDashboard/main/SocialMediaDashboard-Zyp/assets/GeoNamesData.csv";
+# geo_df = pd.read_csv(url, index_col=False);
 
 # Prepare Data --------------------------------------------
 df["end_time"] = pd.to_datetime(df["end_time"]);

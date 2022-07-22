@@ -22,11 +22,14 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_audienceMetrics import audienceTimeOfDayDetail
 
 # Import Dataset --------------------------------------------------
-# df = pd.read_csv("data/ZypInstagram_Audience-TimeOfDay.csv", index_col=False);
 
-sheet = "ZypInstagram_Audience-TimeOfDay";
-worksheet = "ZypInstagram_Audience-TimeOfDay";
-df = getDataframe(sheet, worksheet);
+# Local Data ******************************************************
+df = pd.read_csv("data/ZypInstagram_Audience-TimeOfDay.csv", index_col=False);
+
+# Online Data ******************************************************
+# sheet = "ZypInstagram_Audience-TimeOfDay";
+# worksheet = "ZypInstagram_Audience-TimeOfDay";
+# df = getDataframe(sheet, worksheet);
 
 # Prepare Data --------------------------------------------
 df["end_time"] = pd.to_datetime(df["end_time"]);

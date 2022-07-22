@@ -22,20 +22,23 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_pageMetrics import pageDetail, pageDetailMore
 
 # Import Dataset --------------------------------------------------
-# df1 = pd.read_csv("data/ZypInstagram_Insights1.csv", index_col=False);
-# df2 = pd.read_csv("data/ZypInstagram_Insights2.csv", index_col=False);
 
-sheet1 = "ZypInstagram_Insights1";
-worksheet1 = "ZypInstagram_Insights1";
-df1 = getDataframe(sheet1, worksheet1);
-# listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
-# df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+# Local Data ******************************************************
+df1 = pd.read_csv("data/ZypInstagram_Insights1.csv", index_col=False);
+df2 = pd.read_csv("data/ZypInstagram_Insights2.csv", index_col=False);
 
-sheet2 = "ZypInstagram_Insights2";
-worksheet2 = "ZypInstagram_Insights2";
-df2 = getDataframe(sheet2, worksheet2);
-# listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
-# df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
+# Online Data ******************************************************
+# sheet1 = "ZypInstagram_Insights1";
+# worksheet1 = "ZypInstagram_Insights1";
+# df1 = getDataframe(sheet1, worksheet1);
+# # listOfLists1 = getDataframe_listOfLists(sheet1, worksheet1);
+# # df1 = pd.DataFrame(listOfLists1[1:], columns=listOfLists1[0])
+
+# sheet2 = "ZypInstagram_Insights2";
+# worksheet2 = "ZypInstagram_Insights2";
+# df2 = getDataframe(sheet2, worksheet2);
+# # listOfLists2 = getDataframe_listOfLists(sheet2, worksheet2);
+# # df2 = pd.DataFrame(listOfLists2[1:], columns=listOfLists2[0])
 
 # Prepare Data --------------------------------------------
 df1["end_time"] = pd.to_datetime(df1["end_time"]);

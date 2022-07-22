@@ -22,13 +22,16 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_audienceMetrics import audienceAgeGenderDetail
 
 # Import Dataset --------------------------------------------------
-# df = pd.read_csv("data/ZypInstagram_Audience-Age&Gender.csv", index_col=False);
 
-sheet = "ZypInstagram_Audience-Age&Gender";
-worksheet = "ZypInstagram_Audience-Age&Gender";
-df = getDataframe(sheet, worksheet);
-# listOfLists = getDataframe_listOfLists(sheet, worksheet);
-# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+# Local Data ******************************************************
+df = pd.read_csv("data/ZypInstagram_Audience-Age&Gender.csv", index_col=False);
+
+# Online Data ******************************************************
+# sheet = "ZypInstagram_Audience-Age&Gender";
+# worksheet = "ZypInstagram_Audience-Age&Gender";
+# df = getDataframe(sheet, worksheet);
+# # listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# # df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # Prepare Data --------------------------------------------
 df["end_time"] = pd.to_datetime(df["end_time"]);

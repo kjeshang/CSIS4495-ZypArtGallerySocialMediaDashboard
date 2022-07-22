@@ -22,13 +22,16 @@ from assets.googleService import getDataframe_listOfLists, getDataframe
 from assets.IG_postMetrics import postDetail
 
 # Import Dataset --------------------------------------------------
-# df = pd.read_csv("data/ZypInstagram_Posts.csv", index_col=False);
 
-sheet = "ZypInstagram_Posts";
-worksheet = "ZypInstagram_Posts";
-# df = getDataframe(sheet, worksheet);
-listOfLists = getDataframe_listOfLists(sheet, worksheet);
-df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
+# Local Data ******************************************************
+df = pd.read_csv("data/ZypInstagram_Posts.csv", index_col=False);
+
+# Online Data ******************************************************
+# sheet = "ZypInstagram_Posts";
+# worksheet = "ZypInstagram_Posts";
+# # df = getDataframe(sheet, worksheet);
+# listOfLists = getDataframe_listOfLists(sheet, worksheet);
+# df = pd.DataFrame(listOfLists[1:], columns=listOfLists[0])
 
 # Prepare Data --------------------------------------------
 df["date"] = pd.to_datetime(df["date"]);
