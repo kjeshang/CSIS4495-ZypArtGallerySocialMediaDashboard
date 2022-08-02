@@ -155,7 +155,7 @@ def display_page(pathname):
 
 # Run dashboard application ----------------------------------------------
 # app.run_server(debug=True, use_reloader=False)
-if __name__ == '__main__':
-    app.run_server(debug=True, use_reloader=False)
 # if __name__ == '__main__':
-#     app.run_server(debug=False)
+#     app.run_server(debug=True, use_reloader=False)
+if __name__ == '__main__':
+    app.run_server(debug=True)

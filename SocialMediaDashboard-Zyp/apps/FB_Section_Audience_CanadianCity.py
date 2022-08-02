@@ -25,7 +25,7 @@ from assets.FB_audienceMetrics import audienceCanadianCityDetail, provinceDetail
 
 # Local Data ******************************************************
 df1 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
-df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity1.csv", index_col=False, encoding='utf8');
+df2 = pd.read_csv("data/ZypFacebook_Audience-CanadianCity2.csv", index_col=False, encoding='utf8');
 geo_df = pd.read_csv("assets/GeoNamesData.csv", index_col=False);
 
 # Online Data ******************************************************
