@@ -31,7 +31,9 @@ from apps import FB_Section_Page
 from apps import FB_Section_Audience_AgeGender
 from apps import FB_Section_Audience_Country
 from apps import FB_Section_Audience_TimeOfDay
-from apps import FB_Section_Audience_CanadianCity
+# from apps import FB_Section_Audience_CanadianCity
+from apps import FB_Section_Audience_CanadianCity_LifetimeLikes
+from apps import FB_Section_Audience_CanadianCity_DailyReach
 from apps import IG_Section_Posts
 from apps import IG_Section_Page
 from apps import IG_Section_Audience_AgeGender
@@ -72,7 +74,9 @@ facebookNavigationSection = dbc.DropdownMenu(
         dbc.DropdownMenuItem("Audience", header=True),
         dbc.DropdownMenuItem("Age & Gender", href="/FB_Section_Audience_AgeGender"),
         dbc.DropdownMenuItem("Country", href="/FB_Section_Audience_Country"),
-        dbc.DropdownMenuItem("Canadian City", href="/FB_Section_Audience_CanadianCity"),
+        # dbc.DropdownMenuItem("Canadian City", href="/FB_Section_Audience_CanadianCity"),
+        dbc.DropdownMenuItem("Canadian City Lifetime Likes", href="/FB_Section_Audience_CanadianCity_LifetimeLikes"),
+        dbc.DropdownMenuItem("Canadian City Daily Reach", href="/FB_Section_Audience_CanadianCity_DailyReach"),
         dbc.DropdownMenuItem("Time of Day", href="/FB_Section_Audience_TimeOfDay"), 
     ],
     nav=True,
@@ -132,8 +136,12 @@ def display_page(pathname):
         return FB_Section_Audience_AgeGender.ageGenderLayout;
     if pathname == "/FB_Section_Audience_Country":
         return FB_Section_Audience_Country.countryLayout;
-    if pathname == "/FB_Section_Audience_CanadianCity":
-        return FB_Section_Audience_CanadianCity.canadianCityLayout;
+    # if pathname == "/FB_Section_Audience_CanadianCity":
+    #     return FB_Section_Audience_CanadianCity.canadianCityLayout;
+    if pathname == "/FB_Section_Audience_CanadianCity_LifetimeLikes":
+        return FB_Section_Audience_CanadianCity_LifetimeLikes.canadianCityLayout;
+    if pathname == "/FB_Section_Audience_CanadianCity_DailyReach":
+        return FB_Section_Audience_CanadianCity_DailyReach.canadianCityLayout;
     if pathname == "/FB_Section_Audience_TimeOfDay":
         return FB_Section_Audience_TimeOfDay.timeOfDayLayout;
     # Instagram
