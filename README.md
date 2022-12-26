@@ -10,8 +10,10 @@ This project was developed within a four-month period from May 2022 to August 20
 
 **For a more detailed expalanation regardng this project, please kindly refer to the _Final Report.pdf_**
 
-> Note that the CSV files used as the data source of the application are not provided here to ensure data privacy and protection of the Zyp Art Gallery organization and its social media followers.
+> Note that the CSV files used as the data source of the application are not provided here to ensure data privacy and protection of the Zyp Art Gallery organization and its social media followers. Therefore, this repository was created for the viewing the codebase of the dashboard application.
 
 ## Video Presentation
+
+The video below briefly explains the premise, purpose, core audience, technologies used, and logic flow of the project. In addition, the video showcases a detailed demonstration of the working project and explains its practical funtionality and features.
 
 [![Zyp Art Gallery Social Media Dashboard Application - Presentation Video](https://i9.ytimg.com/vi_webp/nk__5ZDr6FE/mq2.webp?sqp=CIzdo50G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGDogRCh_MA8=&rs=AOn4CLBvhlofxKcIwCRFnfWC4Eq6L4uoAA)](https://youtu.be/nk__5ZDr6FE "Zyp Social Media Dashboard Presentation Video")
